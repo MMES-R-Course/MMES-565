@@ -1,0 +1,109 @@
+---
+title: "Course Schedule"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-location: left
+---
+
+## Course Schedule
+
+This schedule is tentative and may be adjusted throughout the semester.
+
+---
+
+### **Week 1: August 21**
+* **R/Data Viz:** [Course Overview and Intro to R, Git and GitHub](https://drive.google.com/drive/folders/12QQgopbIIbNqcgfgNd3uNY172IEy_8YL?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course))
+* **GIS:** [GIS Overview](https://drive.google.com/drive/folders/1xkkHP6Q8zL9xDxaKtgxIrgxPElL41iZM?usp=drive_link)
+
+---
+
+### **Week 2: August 28**
+* **R/Data Viz:** [Data Types and Structures](https://drive.google.com/drive/folders/1tgNqKKxHsKFkgUJz6I8ZCWRoJbFX5OdY?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/data-types-and-structures))
+    * **New Functions:** [`class()`](appendix.qmd#class), [`str()`](appendix.qmd#str), [`glimpse()`](appendix.qmd#glimpse), [`read_csv()`](appendix.qmd#read-csv), [`read_xlsx()`](appendix.qmd#read-xlsx), [`write_xlsx()`](appendix.qmd#write-xlsx)
+* **GIS:** [Coordinate Systems and Project Setup](https://drive.google.com/drive/folders/1GzYmQZJvCCuRAmjqH6SLUDo5Oibl7DSE?usp=drive_link)
+
+---
+
+### **Week 3: September 4**
+* **R/Data Viz:** [Wrangling with Tidyverse](https://drive.google.com/drive/folders/1F7R4cr1yaR6hpTRCzctKQkslhp_bIysB?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/wrangling-with-tidyverse))
+    * **New Functions:** [`subset()`](appendix.qmd#subset), [`filter()`](appendix.qmd#filter), [`select()`](appendix.qmd#select), [`%>%`](appendix.qmd#pipe), [Logical Operators](appendix.qmd#logical-operators)
+* **GIS:** [Importing, Selecting and Attributes](https://drive.google.com/drive/folders/1DRHdC14v6MwCN1hZJfHnfS2xkadauGAY?usp=drive_link)
+    * **New Tools:** [`Dissolve`](appendix.qmd#dissolve), [`Excel to Table`](appendix.qmd#excel-to-table), [`XY Table to Point`](appendix.qmd#xy-table-to-point), [`Calculate Field`](appendix.qmd#calculate-field)
+
+---
+
+### **Week 4: September 11**
+* **R/Data Viz:** [Advanced Wrangling and Joins](https://drive.google.com/drive/folders/1R7YFHEv9NhFg0fmJk0AkYABHndwY9MEQ?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/advanced-wrangling-and-joins))
+    * **New Functions:** [`left_join()`](appendix.qmd#left-join), [`right_join()`](appendix.qmd#right-join), [`full_join()`](appendix.qmd#full-join), [`inner_join()`](appendix.qmd#inner-join), [`mutate()`](appendix.qmd#mutate), [`summarize()`](appendix.qmd#summarize), [`case_when()`](appendix.qmd#case-when), [`group_by()`](appendix.qmd#group-by)
+* **GIS:** [Clipping, Buffering and Extracting](https://drive.google.com/drive/folders/1ZV47CRUvIInoCJko08Cx88E9XcvugXmE?usp=drive_link)
+    * **New Tools:** [`Clip`](appendix.qmd#clip), [`Buffer`](appendix.qmd#buffer), [`Extract Values to Points`](appendix.qmd#extract-values-to-points), [`Hillshade`](appendix.qmd#hillshade), [Symbology](appendix.qmd#symbology)
+
+---
+
+### **Week 5: September 18**
+* **R/Data Viz:** Topic...
+* **GIS:** Topic...
+
+---
+
+### **Week 6: September 25**
+* **R/Data Viz:** Topic...
+* **GIS:** Topic...
+
+---
+
+### **Week 7: October 2**
+* **R/Data Viz:** Topic...
+* **GIS:** Topic...
+
+---
+
+### **Week 8: October 9**
+* **R/Data Viz:** Topic...
+* **GIS:** Topic...
+
+---
+
+### **Week 9: October 16**
+* **R/Data Viz:** Topic...
+* **GIS:** Topic...
+
+---
+
+### **Week 10: October 23**
+* **R/Data Viz:** Topic...
+* **GIS:** Topic...
+
+---
+
+### **Week 11: October 30**
+* **R/Data Viz:** Topic...
+* **GIS:** Topic...
+
+---
+
+### **Week 12: November 6**
+* **R/Data Viz:** Topic...
+* **GIS:** Topic...
+
+---
+
+### **Week 13: November 13**
+* **Open Classroom:** In-class time to work on final projects.
+
+---
+
+### **Week 14: November 20**
+* **Open Classroom:** In-class time to work on final projects.
+
+---
+
+### **November 27: No Class (Thanksgiving Holiday)**
+
+---
+
+### **Week 15: December 4**
+* **Final Projects Due**
+

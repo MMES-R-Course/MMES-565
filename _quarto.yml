@@ -1,0 +1,23 @@
+# This is the main configuration file for your Quarto website.
+
+project:
+  type: website
+
+website:
+  title: "MMES 565"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: schedule.qmd
+        text: Schedule
+      - href: appendix.qmd
+        text: Appendix
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
