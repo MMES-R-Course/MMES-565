@@ -1,8 +1,5 @@
 ---
 title: "Appendix"
-format:
-  html:
-    theme: cosmo
 ---
 
 ## Reference Materials

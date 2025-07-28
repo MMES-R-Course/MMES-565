@@ -14,11 +14,12 @@ website:
         text: Schedule
       - href: appendix.qmd
         text: Appendix
-
-format:
+format: 
   html:
     theme: cosmo
-    css: styles.css
     toc: true
+    toc-location: left
+    mainfont: "Arial"
+    css: styles.css
 
 

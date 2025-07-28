@@ -1,10 +1,5 @@
 ---
 title: "Course Schedule"
-format:
-  html:
-    theme: cosmo
-    toc: true
-    toc-location: left
 ---
 
 ## Course Schedule

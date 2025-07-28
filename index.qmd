@@ -3,12 +3,6 @@ title: "Data Wrangling using R and Introduction to GIS applications using ArcPro
 subtitle: "MMES 565"
 author: "Jeremiah Blondeau"
 date: "Fall 2025"
-format: 
-  html:
-    theme: cosmo
-    toc: true
-    toc-location: left
-    mainfont: "Arial"
 ---
 
 # Course Overview
