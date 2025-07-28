@@ -38,14 +38,17 @@ This schedule is tentative and may be adjusted throughout the semester.
 ---
 
 ### **Week 5: September 18**
-* **R/Data Viz:** Topic...
-* **GIS:** Topic...
+* **R/Data Viz:** [Reproducible Reporting in R](https://drive.google.com/drive/folders/1MErK1Umq3GJEdVDvlg-b2yuqcxAkChzJ?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/reproducible-reporting-in-r))
+    * **New Resources:** [Quarto Cheat Sheet](https://rstudio.github.io/cheatsheets/quarto.pdf), [R Markdown Cheatsheet](https://rstudio.github.io/cheatsheets/rmarkdown.pdf)
+* **GIS:** [Creating Maps](https://drive.google.com/drive/folders/1NAG4Cj_RIj5VMjpxI_-cfs421HHhhWE7?usp=drive_link)
 
 ---
 
 ### **Week 6: September 25**
-* **R/Data Viz:** Topic...
-* **GIS:** Topic...
+* **R/Data Viz:** [Reshaping Data with Tidyverse](https://drive.google.com/drive/folders/1iAcwLf2IZbAN67WOUf_HGMWhePHCdx87?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/reshaping-data-with-tidyverse))
+    * **New Functions:** [`pivot_longer()`](appendix.qmd#pivot-longer), [`pivot_wider()`](appendix.qmd#pivot-wider), [`separate()`](appendix.qmd#separate), [`unite()`](appendix.qmd#unite)
+* **GIS:** [Merge, Append and Intersect](https://drive.google.com/drive/folders/1jNDzmSeX3FmY64EOZ7ga6rznoOdUKIpR?usp=drive_link)
+    * **New Tools:** [`Merge`](appendix.qmd#merge), [`Append`](appendix.qmd#append), [`Intersect`](appendix.qmd#intersect), [`Spatial Join`](appendix.qmd#spatial-join)
 
 ---
 

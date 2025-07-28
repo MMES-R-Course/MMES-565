@@ -2,7 +2,7 @@
 title: "Data Wrangling using R and Introduction to GIS applications using ArcPro"
 subtitle: "MMES 565"
 author: "Jeremiah Blondeau"
-date: "Fall 2025"
+date: today
 ---
 
 # Course Overview
@@ -15,7 +15,7 @@ This course provides foundational skills in data science and Geographic Informat
 
 ### Data Wrangling, Visualization and Programming
 
-The goal of this section is to give students a foundational understanding of data processing, visualization, and R programming. Students will investigate a range of features in the `tidyverse` package over the course of the 15-week course in order to assemble a comprehensive toolkit for effective data wrangling and visualization. By the end of the course, students will be capable of handling data sets from the real world and producing perceptive visualizations.
+The goal of this section is to give students a broad understanding of data processing, visualization, in the R programming environment. Students will investigate a range of features in the `tidyverse` package over the course of the 15-week course in order to assemble a comprehensive toolkit for effective data wrangling and visualization. By the end of the course, students will be capable of handling data sets from the real world and producing perceptive visualizations.
 
 ### Introduction to GIS using ArcPro
 

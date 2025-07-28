@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-750d985fc7ecd835922a7568076650f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -110,15 +110,18 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#reference-materials" id="toc-reference-materials" class="nav-link active" data-scroll-target="#reference-materials">Reference Materials</a></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -242,7 +245,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="left-join" class="level4">
 <h4 class="anchored" data-anchor-id="left-join"><code>left_join()</code></h4>
 <ul>
-<li><strong>Description:</strong> A <code>dplyr</code> function that returns all rows from the left table (x), and all columns from both x and y. Rows in x with no match in y will have NA values in the new columns.</li>
+<li><strong>Description:</strong> A <code>dplyr</code> function that returns all rows from the left table (x), and all columns from both x and y.</li>
 <li><strong>Example:</strong> <code>left_join(table1, table2, by = "common_column")</code></li>
 </ul>
 <hr>
@@ -250,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="right-join" class="level4">
 <h4 class="anchored" data-anchor-id="right-join"><code>right_join()</code></h4>
 <ul>
-<li><strong>Description:</strong> A <code>dplyr</code> function that returns all rows from the right table (y), and all columns from both x and y. Rows in y with no match in x will have NA values in the new columns.</li>
+<li><strong>Description:</strong> A <code>dplyr</code> function that returns all rows from the right table (y), and all columns from both x and y.</li>
 <li><strong>Example:</strong> <code>right_join(table1, table2, by = "common_column")</code></li>
 </ul>
 <hr>
@@ -258,7 +261,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="full-join" class="level4">
 <h4 class="anchored" data-anchor-id="full-join"><code>full_join()</code></h4>
 <ul>
-<li><strong>Description:</strong> A <code>dplyr</code> function that returns all rows and all columns from both tables. Where there are not matching values, returns NA for the one missing.</li>
+<li><strong>Description:</strong> A <code>dplyr</code> function that returns all rows and all columns from both tables.</li>
 <li><strong>Example:</strong> <code>full_join(table1, table2, by = "common_column")</code></li>
 </ul>
 <hr>
@@ -266,7 +269,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="inner-join" class="level4">
 <h4 class="anchored" data-anchor-id="inner-join"><code>inner_join()</code></h4>
 <ul>
-<li><strong>Description:</strong> A <code>dplyr</code> function that returns only the rows from both tables that have matching values in the <code>by</code> column.</li>
+<li><strong>Description:</strong> A <code>dplyr</code> function that returns only the rows from both tables that have matching values.</li>
 <li><strong>Example:</strong> <code>inner_join(table1, table2, by = "common_column")</code></li>
 </ul>
 <hr>
@@ -282,7 +285,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="summarize" class="level4">
 <h4 class="anchored" data-anchor-id="summarize"><code>summarize()</code></h4>
 <ul>
-<li><strong>Description:</strong> A <code>dplyr</code> function that collapses a data frame to a single row with summary statistics (e.g., mean, median, sum).</li>
+<li><strong>Description:</strong> A <code>dplyr</code> function that collapses a data frame to a single row with summary statistics.</li>
 <li><strong>Example:</strong> <code>summarize(iris, avg_sepal_length = mean(Sepal.Length))</code></li>
 </ul>
 <hr>
@@ -290,7 +293,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="case-when" class="level4">
 <h4 class="anchored" data-anchor-id="case-when"><code>case_when()</code></h4>
 <ul>
-<li><strong>Description:</strong> A <code>dplyr</code> function for applying multiple <code>if/else</code> conditions. It’s useful inside <code>mutate()</code> for creating complex conditional columns.</li>
+<li><strong>Description:</strong> A <code>dplyr</code> function for applying multiple <code>if/else</code> conditions.</li>
 <li><strong>Example:</strong> <code>mutate(iris, size = case_when(Sepal.Length &gt; 5 ~ "big", TRUE ~ "small"))</code></li>
 </ul>
 <hr>
@@ -298,8 +301,40 @@ ul.task-list li input[type="checkbox"] {
 <section id="group-by" class="level4">
 <h4 class="anchored" data-anchor-id="group-by"><code>group_by()</code></h4>
 <ul>
-<li><strong>Description:</strong> A <code>dplyr</code> function used to group a data frame by one or more variables. Most often used before <code>summarize()</code> to calculate summary statistics for each group.</li>
+<li><strong>Description:</strong> A <code>dplyr</code> function used to group a data frame by one or more variables.</li>
 <li><strong>Example:</strong> <code>iris %&gt;% group_by(Species) %&gt;% summarize(avg_petal_length = mean(Petal.Length))</code></li>
+</ul>
+<hr>
+</section>
+<section id="pivot-longer" class="level4">
+<h4 class="anchored" data-anchor-id="pivot-longer"><code>pivot_longer()</code></h4>
+<ul>
+<li><strong>Description:</strong> A <code>tidyr</code> function that “lengthens” data, increasing the number of rows and decreasing the number of columns. It’s used to convert wide data to long data.</li>
+<li><strong>Example:</strong> <code>data %&gt;% pivot_longer(cols = c(col1, col2), names_to = "variable", values_to = "value")</code></li>
+</ul>
+<hr>
+</section>
+<section id="pivot-wider" class="level4">
+<h4 class="anchored" data-anchor-id="pivot-wider"><code>pivot_wider()</code></h4>
+<ul>
+<li><strong>Description:</strong> A <code>tidyr</code> function that “widens” data, increasing the number of columns and decreasing the number of rows. It’s the inverse of <code>pivot_longer()</code>.</li>
+<li><strong>Example:</strong> <code>data %&gt;% pivot_wider(names_from = "variable", values_from = "value")</code></li>
+</ul>
+<hr>
+</section>
+<section id="separate" class="level4">
+<h4 class="anchored" data-anchor-id="separate"><code>separate()</code></h4>
+<ul>
+<li><strong>Description:</strong> A <code>tidyr</code> function that splits a single character column into multiple columns.</li>
+<li><strong>Example:</strong> <code>data %&gt;% separate(col = "combined_col", into = c("new_col1", "new_col2"), sep = "-")</code></li>
+</ul>
+<hr>
+</section>
+<section id="unite" class="level4">
+<h4 class="anchored" data-anchor-id="unite"><code>unite()</code></h4>
+<ul>
+<li><strong>Description:</strong> A <code>tidyr</code> function that combines multiple columns into a single character column. It’s the inverse of <code>separate()</code>.</li>
+<li><strong>Example:</strong> <code>data %&gt;% unite("new_combined_col", col1, col2, sep = "_")</code></li>
 </ul>
 </section>
 </div>
@@ -336,35 +371,63 @@ ul.task-list li input[type="checkbox"] {
 <section id="clip" class="level4">
 <h4 class="anchored" data-anchor-id="clip">Clip</h4>
 <ul>
-<li><strong>Description:</strong> Extracts input features that overlay the clip features. Like using a cookie cutter to cut out a piece of a larger dataset.</li>
+<li><strong>Description:</strong> Extracts input features that overlay the clip features. Like using a cookie cutter.</li>
 </ul>
 <hr>
 </section>
 <section id="buffer" class="level4">
 <h4 class="anchored" data-anchor-id="buffer">Buffer</h4>
 <ul>
-<li><strong>Description:</strong> Creates buffer polygons around input features to a specified distance. Useful for proximity analysis.</li>
+<li><strong>Description:</strong> Creates buffer polygons around input features to a specified distance.</li>
 </ul>
 <hr>
 </section>
 <section id="extract-values-to-points" class="level4">
 <h4 class="anchored" data-anchor-id="extract-values-to-points">Extract Values to Points</h4>
 <ul>
-<li><strong>Description:</strong> Extracts the cell values of a raster based on a set of point features and records the values in the attribute table of the point feature class.</li>
+<li><strong>Description:</strong> Extracts the cell values of a raster based on a set of point features.</li>
 </ul>
 <hr>
 </section>
 <section id="hillshade" class="level4">
 <h4 class="anchored" data-anchor-id="hillshade">Hillshade</h4>
 <ul>
-<li><strong>Description:</strong> Creates a shaded relief raster from a digital elevation model (DEM) by considering the illumination source angle and shadows.</li>
+<li><strong>Description:</strong> Creates a shaded relief raster from a digital elevation model (DEM).</li>
 </ul>
 <hr>
 </section>
 <section id="symbology" class="level4">
 <h4 class="anchored" data-anchor-id="symbology">Symbology</h4>
 <ul>
-<li><strong>Description:</strong> The process of assigning colors, markers, sizes, and other visual variables to map features to convey information. This is a core concept rather than a single tool.</li>
+<li><strong>Description:</strong> The process of assigning visual variables to map features to convey information.</li>
+</ul>
+<hr>
+</section>
+<section id="merge" class="level4">
+<h4 class="anchored" data-anchor-id="merge">Merge</h4>
+<ul>
+<li><strong>Description:</strong> Combines multiple input datasets of the same data type into a single, new output dataset.</li>
+</ul>
+<hr>
+</section>
+<section id="append" class="level4">
+<h4 class="anchored" data-anchor-id="append">Append</h4>
+<ul>
+<li><strong>Description:</strong> Adds features from one or more datasets into an existing target dataset.</li>
+</ul>
+<hr>
+</section>
+<section id="intersect" class="level4">
+<h4 class="anchored" data-anchor-id="intersect">Intersect</h4>
+<ul>
+<li><strong>Description:</strong> Computes a geometric intersection of input features. Only the overlapping features are written to the output.</li>
+</ul>
+<hr>
+</section>
+<section id="spatial-join" class="level4">
+<h4 class="anchored" data-anchor-id="spatial-join">Spatial Join</h4>
+<ul>
+<li><strong>Description:</strong> Joins attributes from one feature to another based on their spatial relationship (e.g., points inside a polygon).</li>
 </ul>
 </section>
 </div>

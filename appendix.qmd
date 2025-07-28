@@ -1,5 +1,8 @@
 ---
 title: "Appendix"
+format:
+  html:
+    theme: cosmo
 ---
 
 ## Reference Materials
@@ -12,165 +15,209 @@ This appendix provides a quick reference for functions and tools covered in clas
 
 Each function listed here is a part of the `tidyverse` or base R.
 
----
+***
 
 #### `class()` {#class}
 * **Description:** Returns the class or type of an R object.
 * **Example:** `class(my_variable)`
 
----
+***
 
 #### `str()` {#str}
 * **Description:** Displays the internal **str**ucture of an R object.
 * **Example:** `str(iris)`
 
----
+***
 
 #### `glimpse()` {#glimpse}
 * **Description:** A `dplyr` function that provides a transposed view of `str()`.
 * **Example:** `glimpse(iris)`
 
----
+***
 
 #### `read_csv()` {#read-csv}
 * **Description:** A `readr` function for reading .csv files.
 * **Example:** `read_csv("my_data.csv")`
 
----
+***
 
 #### `read_xlsx()` {#read-xlsx}
 * **Description:** A `readxl` function for reading Excel files.
 * **Example:** `read_xlsx("my_data.xlsx")`
 
----
+***
 
 #### `write_xlsx()` {#write-xlsx}
 * **Description:** A `writexl` function for writing to an .xlsx file.
 * **Example:** `write_xlsx(my_dataframe, "output.xlsx")`
 
----
+***
 
 #### `subset()` {#subset}
 * **Description:** A base R function for selecting rows and columns.
 * **Example:** `subset(iris, Species == "setosa")`
 
----
+***
 
 #### `filter()` {#filter}
 * **Description:** A `dplyr` function to select rows based on their values.
 * **Example:** `filter(iris, Sepal.Length > 7)`
 
----
+***
 
 #### `select()` {#select}
 * **Description:** A `dplyr` function to select columns by name.
 * **Example:** `select(iris, Petal.Length, Petal.Width)`
 
----
+***
 
 #### `%>%` (Pipe) {#pipe}
 * **Description:** The pipe operator from `magrittr` that chains operations together.
 * **Example:** `iris %>% filter(Species == "versicolor") %>% select(Petal.Width)`
 
----
+***
 
 #### Logical Operators {#logical-operators}
 * **Description:** Used to create conditions for filtering. Includes `==`, `!=`, `>`, `<`, `&` (AND), `|` (OR).
 * **Example:** `filter(iris, Species == "setosa" & Petal.Width > 0.2)`
 
----
+***
 
 #### `left_join()` {#left-join}
-* **Description:** A `dplyr` function that returns all rows from the left table (x), and all columns from both x and y. Rows in x with no match in y will have NA values in the new columns.
+* **Description:** A `dplyr` function that returns all rows from the left table (x), and all columns from both x and y.
 * **Example:** `left_join(table1, table2, by = "common_column")`
 
----
+***
 
 #### `right_join()` {#right-join}
-* **Description:** A `dplyr` function that returns all rows from the right table (y), and all columns from both x and y. Rows in y with no match in x will have NA values in the new columns.
+* **Description:** A `dplyr` function that returns all rows from the right table (y), and all columns from both x and y.
 * **Example:** `right_join(table1, table2, by = "common_column")`
 
----
+***
 
 #### `full_join()` {#full-join}
-* **Description:** A `dplyr` function that returns all rows and all columns from both tables. Where there are not matching values, returns NA for the one missing.
+* **Description:** A `dplyr` function that returns all rows and all columns from both tables.
 * **Example:** `full_join(table1, table2, by = "common_column")`
 
----
+***
 
 #### `inner_join()` {#inner-join}
-* **Description:** A `dplyr` function that returns only the rows from both tables that have matching values in the `by` column.
+* **Description:** A `dplyr` function that returns only the rows from both tables that have matching values.
 * **Example:** `inner_join(table1, table2, by = "common_column")`
 
----
+***
 
 #### `mutate()` {#mutate}
 * **Description:** A `dplyr` function that adds new variables or transforms existing ones.
 * **Example:** `mutate(iris, Petal.Area = Petal.Length * Petal.Width)`
 
----
+***
 
 #### `summarize()` {#summarize}
-* **Description:** A `dplyr` function that collapses a data frame to a single row with summary statistics (e.g., mean, median, sum).
+* **Description:** A `dplyr` function that collapses a data frame to a single row with summary statistics.
 * **Example:** `summarize(iris, avg_sepal_length = mean(Sepal.Length))`
 
----
+***
 
 #### `case_when()` {#case-when}
-* **Description:** A `dplyr` function for applying multiple `if/else` conditions. It's useful inside `mutate()` for creating complex conditional columns.
+* **Description:** A `dplyr` function for applying multiple `if/else` conditions.
 * **Example:** `mutate(iris, size = case_when(Sepal.Length > 5 ~ "big", TRUE ~ "small"))`
 
----
+***
 
 #### `group_by()` {#group-by}
-* **Description:** A `dplyr` function used to group a data frame by one or more variables. Most often used before `summarize()` to calculate summary statistics for each group.
+* **Description:** A `dplyr` function used to group a data frame by one or more variables.
 * **Example:** `iris %>% group_by(Species) %>% summarize(avg_petal_length = mean(Petal.Length))`
+
+***
+
+#### `pivot_longer()` {#pivot-longer}
+* **Description:** A `tidyr` function that "lengthens" data, increasing the number of rows and decreasing the number of columns. It's used to convert wide data to long data.
+* **Example:** `data %>% pivot_longer(cols = c(col1, col2), names_to = "variable", values_to = "value")`
+
+***
+
+#### `pivot_wider()` {#pivot-wider}
+* **Description:** A `tidyr` function that "widens" data, increasing the number of columns and decreasing the number of rows. It's the inverse of `pivot_longer()`.
+* **Example:** `data %>% pivot_wider(names_from = "variable", values_from = "value")`
+
+***
+
+#### `separate()` {#separate}
+* **Description:** A `tidyr` function that splits a single character column into multiple columns.
+* **Example:** `data %>% separate(col = "combined_col", into = c("new_col1", "new_col2"), sep = "-")`
+
+***
+
+#### `unite()` {#unite}
+* **Description:** A `tidyr` function that combines multiple columns into a single character column. It's the inverse of `separate()`.
+* **Example:** `data %>% unite("new_combined_col", col1, col2, sep = "_")`
 
 ### ArcPro Tools
 
----
+***
 
 #### Dissolve {#dissolve}
 * **Description:** Aggregates features based on specified attributes.
 
----
+***
 
 #### Excel to Table {#excel-to-table}
 * **Description:** Converts Microsoft Excel files into a table in your geodatabase.
 
----
+***
 
 #### XY Table to Point {#xy-table-to-point}
 * **Description:** Creates a new point feature class based on x- and y-coordinates in a table.
 
----
+***
 
 #### Calculate Field {#calculate-field}
 * **Description:** Calculates the values of a field for a feature class or table.
 
----
+***
 
 #### Clip {#clip}
-* **Description:** Extracts input features that overlay the clip features. Like using a cookie cutter to cut out a piece of a larger dataset.
+* **Description:** Extracts input features that overlay the clip features. Like using a cookie cutter.
 
----
+***
 
 #### Buffer {#buffer}
-* **Description:** Creates buffer polygons around input features to a specified distance. Useful for proximity analysis.
+* **Description:** Creates buffer polygons around input features to a specified distance.
 
----
+***
 
 #### Extract Values to Points {#extract-values-to-points}
-* **Description:** Extracts the cell values of a raster based on a set of point features and records the values in the attribute table of the point feature class.
+* **Description:** Extracts the cell values of a raster based on a set of point features.
 
----
+***
 
 #### Hillshade {#hillshade}
-* **Description:** Creates a shaded relief raster from a digital elevation model (DEM) by considering the illumination source angle and shadows.
+* **Description:** Creates a shaded relief raster from a digital elevation model (DEM).
 
----
+***
 
 #### Symbology {#symbology}
-* **Description:** The process of assigning colors, markers, sizes, and other visual variables to map features to convey information. This is a core concept rather than a single tool.
+* **Description:** The process of assigning visual variables to map features to convey information.
+
+***
+
+#### Merge {#merge}
+* **Description:** Combines multiple input datasets of the same data type into a single, new output dataset.
+
+***
+
+#### Append {#append}
+* **Description:** Adds features from one or more datasets into an existing target dataset.
+
+***
+
+#### Intersect {#intersect}
+* **Description:** Computes a geometric intersection of input features. Only the overlapping features are written to the output.
+
+***
+
+#### Spatial Join {#spatial-join}
+* **Description:** Joins attributes from one feature to another based on their spatial relationship (e.g., points inside a polygon).
 
 :::
