@@ -7,15 +7,19 @@ date: today
 
 # Course Overview
 
-This course provides foundational skills in data science and Geographic Information Systems (GIS). It is divided into two main sections: 1) data processing, visualization, and R programming using the `tidyverse`, and 2) an introduction to GIS using ESRI's ArcPro software.
+This course provides foundational skills in data science and Geographic Information Systems (GIS). It is divided into two main sections: 
+
+1) data processing, visualization, and R programming using the `tidyverse`, and 
+
+2) an introduction to GIS using ESRI's ArcPro software.
 
 ---
 
 ## Course Goals
 
-### Data Wrangling, Visualization and Programming
+### Data Wrangling and Visualization in R
 
-The goal of this section is to give students a broad understanding of data processing, visualization, in the R programming environment. Students will investigate a range of features in the `tidyverse` package over the course of the 15-week course in order to assemble a comprehensive toolkit for effective data wrangling and visualization. By the end of the course, students will be capable of handling data sets from the real world and producing perceptive visualizations.
+The goal of this section is to give students a broad understanding of data processing, visualization, in the R programming environment. Students will investigate a range of features in the `tidyverse` package over the course in order to assemble a toolkit for effective data wrangling and visualization.
 
 ### Introduction to GIS using ArcPro
 
@@ -27,7 +31,13 @@ This section is designed to provide students with a practical introduction to Ge
 
 * **Meeting Time**: 4 hours of combined lecture and lab per week.
 
-Each class will be roughly divided into two sections: 1) Data wrangling, visualization, and programming, and 2) Building foundational GIS skills using ArcPro. A short lecture for each section will introduce the week's concepts, and then students will complete exercises for practice and to help solidify their understanding.
+Each class will be roughly divided into two sections: 
+
+1) Data wrangling, visualization, and programming, and 
+
+2) Building GIS skills using ArcPro. 
+
+A short lecture for each section will introduce the week's concepts, and then students will complete in-class exercises.
 
 ---
 

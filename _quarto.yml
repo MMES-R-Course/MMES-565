@@ -14,6 +14,9 @@ website:
         text: Schedule
       - href: appendix.qmd
         text: Appendix
+    right: 
+      - href: supplemental.qmd
+        text: Supplemental Materials
 format: 
   html:
     theme: cosmo

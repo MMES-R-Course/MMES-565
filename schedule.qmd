@@ -91,8 +91,8 @@ This schedule is tentative and may be adjusted throughout the semester.
 ---
 
 ### **Week 12: November 6**
-* **R/Data Viz:** Topic...
-* **GIS:** Topic...
+* **R/Data Viz:** TBD
+* **GIS:** TBD
 
 ---
 
