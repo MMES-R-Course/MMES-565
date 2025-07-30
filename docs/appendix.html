@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -152,7 +186,6 @@ ul.task-list li input[type="checkbox"] {
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">R Functions</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">ArcPro Tools</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Each function listed here is a part of the <code>tidyverse</code> or base R.</p>
 <hr>
 <section id="class" class="level4">
 <h4 class="anchored" data-anchor-id="class"><code>class()</code></h4>
@@ -309,7 +342,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="pivot-longer" class="level4">
 <h4 class="anchored" data-anchor-id="pivot-longer"><code>pivot_longer()</code></h4>
 <ul>
-<li><strong>Description:</strong> A <code>tidyr</code> function that “lengthens” data, increasing the number of rows and decreasing the number of columns. It’s used to convert wide data to long data.</li>
+<li><strong>Description:</strong> A <code>tidyr</code> function that “lengthens” data, increasing the number of rows and decreasing the number of columns.</li>
 <li><strong>Example:</strong> <code>data %&gt;% pivot_longer(cols = c(col1, col2), names_to = "variable", values_to = "value")</code></li>
 </ul>
 <hr>
@@ -317,7 +350,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="pivot-wider" class="level4">
 <h4 class="anchored" data-anchor-id="pivot-wider"><code>pivot_wider()</code></h4>
 <ul>
-<li><strong>Description:</strong> A <code>tidyr</code> function that “widens” data, increasing the number of columns and decreasing the number of rows. It’s the inverse of <code>pivot_longer()</code>.</li>
+<li><strong>Description:</strong> A <code>tidyr</code> function that “widens” data, increasing the number of columns and decreasing the number of rows.</li>
 <li><strong>Example:</strong> <code>data %&gt;% pivot_wider(names_from = "variable", values_from = "value")</code></li>
 </ul>
 <hr>
@@ -333,8 +366,70 @@ ul.task-list li input[type="checkbox"] {
 <section id="unite" class="level4">
 <h4 class="anchored" data-anchor-id="unite"><code>unite()</code></h4>
 <ul>
-<li><strong>Description:</strong> A <code>tidyr</code> function that combines multiple columns into a single character column. It’s the inverse of <code>separate()</code>.</li>
+<li><strong>Description:</strong> A <code>tidyr</code> function that combines multiple columns into a single character column.</li>
 <li><strong>Example:</strong> <code>data %&gt;% unite("new_combined_col", col1, col2, sep = "_")</code></li>
+</ul>
+<hr>
+</section>
+<section id="for-loop" class="level4">
+<h4 class="anchored" data-anchor-id="for-loop"><code>for()</code> (For Loops)</h4>
+<ul>
+<li><p><strong>Description:</strong> Executes a block of code repeatedly for each item in a sequence.</p></li>
+<li><p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"This is loop number"</span>, i))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<hr>
+</section>
+<section id="conditionals" class="level4">
+<h4 class="anchored" data-anchor-id="conditionals"><code>if()</code>, <code>else if()</code>, <code>else</code> (Conditionals)</h4>
+<ul>
+<li><p><strong>Description:</strong> Controls the flow of code execution based on logical conditions.</p></li>
+<li><p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">20</span>) {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"x is large"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">5</span>) {</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"x is medium"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"x is small"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<hr>
+</section>
+<section id="custom-function" class="level4">
+<h4 class="anchored" data-anchor-id="custom-function"><code>function()</code> (Custom Functions)</h4>
+<ul>
+<li><p><strong>Description:</strong> Creates a new, reusable function to perform a specific task.</p></li>
+<li><p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>add_numbers <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(a <span class="sc">+</span> b)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<hr>
+</section>
+<section id="nest" class="level4">
+<h4 class="anchored" data-anchor-id="nest"><code>nest()</code></h4>
+<ul>
+<li><strong>Description:</strong> A <code>tidyr</code> function that creates a list-column containing data frames. It’s a cornerstone of working with nested data.</li>
+<li><strong>Example:</strong> <code>data %&gt;% group_by(group_var) %&gt;% nest()</code></li>
+</ul>
+<hr>
+</section>
+<section id="map" class="level4">
+<h4 class="anchored" data-anchor-id="map"><code>map()</code></h4>
+<ul>
+<li><strong>Description:</strong> A function from the <code>purrr</code> package that applies a function to each element of a list or vector, returning a list. It’s an alternative to <code>for</code> loops for iterative operations.</li>
+<li><strong>Example:</strong> <code>nested_data %&gt;% mutate(model = map(data, ~lm(y ~ x, data = .)))</code></li>
+</ul>
+<hr>
+</section>
+<section id="tidy" class="level4">
+<h4 class="anchored" data-anchor-id="tidy"><code>tidy()</code></h4>
+<ul>
+<li><strong>Description:</strong> A function from the <code>broom</code> package that takes the messy output of a model and turns it into a tidy data frame.</li>
+<li><strong>Example:</strong> <code>model %&gt;% tidy()</code></li>
 </ul>
 </section>
 </div>
@@ -427,7 +522,112 @@ ul.task-list li input[type="checkbox"] {
 <section id="spatial-join" class="level4">
 <h4 class="anchored" data-anchor-id="spatial-join">Spatial Join</h4>
 <ul>
-<li><strong>Description:</strong> Joins attributes from one feature to another based on their spatial relationship (e.g., points inside a polygon).</li>
+<li><strong>Description:</strong> Joins attributes from one feature to another based on their spatial relationship.</li>
+</ul>
+<hr>
+</section>
+<section id="extract-by-mask" class="level4">
+<h4 class="anchored" data-anchor-id="extract-by-mask">Extract by Mask</h4>
+<ul>
+<li><strong>Description:</strong> Extracts the cells of a raster that correspond to the areas defined by a mask.</li>
+</ul>
+<hr>
+</section>
+<section id="zonal-statistics" class="level4">
+<h4 class="anchored" data-anchor-id="zonal-statistics">Zonal Statistics</h4>
+<ul>
+<li><strong>Description:</strong> Summarizes the values of a raster within the zones of another dataset.</li>
+</ul>
+<hr>
+</section>
+<section id="feature-to-point" class="level4">
+<h4 class="anchored" data-anchor-id="feature-to-point">Feature to Point</h4>
+<ul>
+<li><strong>Description:</strong> Creates a feature class containing points generated from the representative locations of input features.</li>
+</ul>
+<hr>
+</section>
+<section id="tabulate-area" class="level4">
+<h4 class="anchored" data-anchor-id="tabulate-area">Tabulate Area</h4>
+<ul>
+<li><strong>Description:</strong> Calculates the area of each feature from one layer that falls within the classes of another raster layer.</li>
+</ul>
+<hr>
+</section>
+<section id="slope-tool" class="level4">
+<h4 class="anchored" data-anchor-id="slope-tool">Slope</h4>
+<ul>
+<li><strong>Description:</strong> Calculates the rate of change in elevation for each cell of a raster.</li>
+</ul>
+<hr>
+</section>
+<section id="aspect-tool" class="level4">
+<h4 class="anchored" data-anchor-id="aspect-tool">Aspect</h4>
+<ul>
+<li><strong>Description:</strong> Identifies the downslope direction of the maximum rate of change in value from each cell to its neighbors.</li>
+</ul>
+<hr>
+</section>
+<section id="contour-tool" class="level4">
+<h4 class="anchored" data-anchor-id="contour-tool">Contour</h4>
+<ul>
+<li><strong>Description:</strong> Creates a line feature class of contours (isolines) from a raster surface.</li>
+</ul>
+<hr>
+</section>
+<section id="raster-to-polygon" class="level4">
+<h4 class="anchored" data-anchor-id="raster-to-polygon">Raster to Polygon</h4>
+<ul>
+<li><strong>Description:</strong> Converts a raster dataset to a polygon feature class.</li>
+</ul>
+<hr>
+</section>
+<section id="raster-calculator" class="level4">
+<h4 class="anchored" data-anchor-id="raster-calculator">Raster Calculator</h4>
+<ul>
+<li><strong>Description:</strong> Builds and executes a single Map Algebra expression using a Python syntax.</li>
+</ul>
+<hr>
+</section>
+<section id="creating-editing-features" class="level4">
+<h4 class="anchored" data-anchor-id="creating-editing-features">Creating &amp; Editing Features</h4>
+<ul>
+<li><strong>Description:</strong> A collection of tools and workflows for creating new vector features and modifying existing ones.</li>
+</ul>
+<hr>
+</section>
+<section id="minimum-bounding-geometry" class="level4">
+<h4 class="anchored" data-anchor-id="minimum-bounding-geometry">Minimum Bounding Geometry</h4>
+<ul>
+<li><strong>Description:</strong> Creates a feature class containing polygons or polylines which represent a specified minimum bounding geometry.</li>
+</ul>
+<hr>
+</section>
+<section id="create-fishnet" class="level4">
+<h4 class="anchored" data-anchor-id="create-fishnet">Create Fishnet</h4>
+<ul>
+<li><strong>Description:</strong> Creates a net of rectangular cells (a fishnet).</li>
+</ul>
+<hr>
+</section>
+<section id="interpolation-tools" class="level4">
+<h4 class="anchored" data-anchor-id="interpolation-tools">Interpolation Tools</h4>
+<ul>
+<li><strong>Description:</strong> A suite of tools (like IDW, Kriging, Spline) used to estimate values at unsampled locations.</li>
+</ul>
+<hr>
+</section>
+<section id="model-builder" class="level4">
+<h4 class="anchored" data-anchor-id="model-builder">ModelBuilder</h4>
+<ul>
+<li><strong>Description:</strong> A visual programming language for building geoprocessing workflows.</li>
+</ul>
+<hr>
+</section>
+<section id="georeferencing-tools" class="level4">
+<h4 class="anchored" data-anchor-id="georeferencing-tools">Georeferencing Tools</h4>
+<ul>
+<li><strong>Description:</strong> A set of tools used to align raster or vector data to a known coordinate system. This is often done by creating control points that link locations in the data to known real-world coordinates.</li>
 </ul>
 </section>
 </div>

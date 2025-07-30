@@ -53,32 +53,40 @@ This schedule is tentative and may be adjusted throughout the semester.
 ---
 
 ### **Week 7: October 2**
-* **R/Data Viz:** Topic...
-* **GIS:** Topic...
+* **R/Data Viz:** [Data Visualization with ggplot](https://drive.google.com/drive/folders/1-3TfJoQKZw6X7wb9fYmnntydKlNAAn6M?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/data-visualizations-with-ggplot))
+    * **New Resources:** [ggplot2 Cheatsheet](https://rstudio.github.io/cheatsheets/data-visualization.pdf)
+* **GIS:** [Extract, Convert and Tabulate](https://drive.google.com/drive/folders/1JEDysru02ZPuz88vl5t4eV7VymkWtScz?usp=drive_link)
+    * **New Tools:** [`Extract by Mask`](appendix.qmd#extract-by-mask), [`Zonal Statistics`](appendix.qmd#zonal-statistics), [`Feature to Point`](appendix.qmd#feature-to-point), [`Tabulate Area`](appendix.qmd#tabulate-area)
 
 ---
 
 ### **Week 8: October 9**
-* **R/Data Viz:** Topic...
-* **GIS:** Topic...
+* **R/Data Viz:** [Data visualizations with ggplot-part2](https://drive.google.com/drive/folders/1VQEgYhsrxzc8QLb-L0kDu700znmse7GI?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/data-visualizations-with-ggplot-part2))
+    * **New Resources:** [ggplot2 Cheatsheet](https://posit.co/resources/cheatsheets/)
+* **GIS:** [Raster Tools](https://drive.google.com/drive/folders/13g8uG9qdusjlZTVcLCNm-GBluuiZx7Xf?usp=drive_link)
+    * **New Tools:** [`Slope`](appendix.qmd#slope-tool), [`Aspect`](appendix.qmd#aspect-tool), [`Contour`](appendix.qmd#contour-tool), [`Raster to Polygon`](appendix.qmd#raster-to-polygon), [`Raster Calculator`](appendix.qmd#raster-calculator)
 
 ---
 
 ### **Week 9: October 16**
-* **R/Data Viz:** Topic...
-* **GIS:** Topic...
+* **R/Data Viz:** [For Loops, Conditionals and Functions](https://drive.google.com/drive/folders/1tzZmqJe_4iXm5DXOuk-2ZubAwBeslPOe?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/for-loops-conditionals-and-functions))
+    * **New Functions:** [`for()` loops](appendix.qmd#for-loop), [Conditionals: `if`, `else if`](appendix.qmd#conditionals), [`function()`](appendix.qmd#custom-function)
+* **GIS:** [Creating Shapefiles and Interpolation](https://drive.google.com/drive/folders/1mxCAKU3r3JypbFA0VxqCvtKSpcgKo8nD?usp=drive_link)
+    * **New Tools:** [Creating/Editing Features](appendix.qmd#creating-editing-features), [Minimum Bounding Geometry](appendix.qmd#minimum-bounding-geometry), [Create Fishnet](appendix.qmd#create-fishnet), [Interpolation Tools](appendix.qmd#interpolation-tools)
 
 ---
 
 ### **Week 10: October 23**
-* **R/Data Viz:** Topic...
-* **GIS:** Topic...
-
----
+* **R/Data Viz:** [Custom Functions](https://drive.google.com/drive/folders/1Ej8Ha__hLZ08FAQ4o-L3iwGKDikmP2xB?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/custom-functions))
+    * **New Functions:** [Custom Functions](appendix.qmd#custom-function)
+* **GIS:** [ModelBuilder](https://drive.google.com/drive/folders/16wIlUMFsRwua7UVN8NMaicH8ObcmnO3N?usp=drive_link)
+    * **New Tools:** [ModelBuilder](appendix.qmd#model-builder)
 
 ### **Week 11: October 30**
-* **R/Data Viz:** Topic...
-* **GIS:** Topic...
+* **R/Data Viz:** [Efficient Programming](https://drive.google.com/drive/folders/1QZcaD96rr7pvsCi0QRJwulWkZCsJ_0Pd?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/efficient-programming))
+    * **New Functions:** [`nest()`](appendix.qmd#nest), [`map()`](appendix.qmd#map), [`tidy()`](appendix.qmd#tidy)
+* **GIS:** [Georeferencing](https://drive.google.com/drive/folders/1P2BTM526t7zgXMsCzmYMmEbJaxClkekx?usp=drive_link)
+    * **New Tools:** [Georeferencing Tools](appendix.qmd#georeferencing-tools)
 
 ---
 

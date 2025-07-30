@@ -11,9 +11,7 @@ This appendix provides a quick reference for functions and tools covered in clas
 
 ::: {.panel-tabset}
 
-### R Functions
-
-Each function listed here is a part of the `tidyverse` or base R.
+## R Functions {#r-functions}
 
 ***
 
@@ -132,13 +130,13 @@ Each function listed here is a part of the `tidyverse` or base R.
 ***
 
 #### `pivot_longer()` {#pivot-longer}
-* **Description:** A `tidyr` function that "lengthens" data, increasing the number of rows and decreasing the number of columns. It's used to convert wide data to long data.
+* **Description:** A `tidyr` function that "lengthens" data, increasing the number of rows and decreasing the number of columns.
 * **Example:** `data %>% pivot_longer(cols = c(col1, col2), names_to = "variable", values_to = "value")`
 
 ***
 
 #### `pivot_wider()` {#pivot-wider}
-* **Description:** A `tidyr` function that "widens" data, increasing the number of columns and decreasing the number of rows. It's the inverse of `pivot_longer()`.
+* **Description:** A `tidyr` function that "widens" data, increasing the number of columns and decreasing the number of rows.
 * **Example:** `data %>% pivot_wider(names_from = "variable", values_from = "value")`
 
 ***
@@ -150,10 +148,66 @@ Each function listed here is a part of the `tidyverse` or base R.
 ***
 
 #### `unite()` {#unite}
-* **Description:** A `tidyr` function that combines multiple columns into a single character column. It's the inverse of `separate()`.
+* **Description:** A `tidyr` function that combines multiple columns into a single character column.
 * **Example:** `data %>% unite("new_combined_col", col1, col2, sep = "_")`
 
-### ArcPro Tools
+***
+
+#### `for()` (For Loops) {#for-loop}
+* **Description:** Executes a block of code repeatedly for each item in a sequence.
+* **Example:**
+  ```r
+  for (i in 1:5) {
+    print(paste("This is loop number", i))
+  }
+  ```
+
+***
+
+#### `if()`, `else if()`, `else` (Conditionals) {#conditionals}
+* **Description:** Controls the flow of code execution based on logical conditions.
+* **Example:**
+  ```r
+  x <- 10
+  if (x > 20) {
+    print("x is large")
+  } else if (x > 5) {
+    print("x is medium")
+  } else {
+    print("x is small")
+  }
+  ```
+
+***
+
+#### `function()` (Custom Functions) {#custom-function}
+* **Description:** Creates a new, reusable function to perform a specific task.
+* **Example:**
+  ```r
+  add_numbers <- function(a, b) {
+    return(a + b)
+  }
+  ```
+
+***
+
+#### `nest()` {#nest}
+* **Description:** A `tidyr` function that creates a list-column containing data frames. It's a cornerstone of working with nested data.
+* **Example:** `data %>% group_by(group_var) %>% nest()`
+
+***
+
+#### `map()` {#map}
+* **Description:** A function from the `purrr` package that applies a function to each element of a list or vector, returning a list. It's an alternative to `for` loops for iterative operations.
+* **Example:** `nested_data %>% mutate(model = map(data, ~lm(y ~ x, data = .)))`
+
+***
+
+#### `tidy()` {#tidy}
+* **Description:** A function from the `broom` package that takes the messy output of a model and turns it into a tidy data frame.
+* **Example:** `model %>% tidy()`
+
+## ArcPro Tools {#arcpro-tools}
 
 ***
 
@@ -218,6 +272,81 @@ Each function listed here is a part of the `tidyverse` or base R.
 ***
 
 #### Spatial Join {#spatial-join}
-* **Description:** Joins attributes from one feature to another based on their spatial relationship (e.g., points inside a polygon).
+* **Description:** Joins attributes from one feature to another based on their spatial relationship.
+
+***
+
+#### Extract by Mask {#extract-by-mask}
+* **Description:** Extracts the cells of a raster that correspond to the areas defined by a mask.
+
+***
+
+#### Zonal Statistics {#zonal-statistics}
+* **Description:** Summarizes the values of a raster within the zones of another dataset.
+
+***
+
+#### Feature to Point {#feature-to-point}
+* **Description:** Creates a feature class containing points generated from the representative locations of input features.
+
+***
+
+#### Tabulate Area {#tabulate-area}
+* **Description:** Calculates the area of each feature from one layer that falls within the classes of another raster layer.
+
+***
+
+#### Slope {#slope-tool}
+* **Description:** Calculates the rate of change in elevation for each cell of a raster.
+
+***
+
+#### Aspect {#aspect-tool}
+* **Description:** Identifies the downslope direction of the maximum rate of change in value from each cell to its neighbors.
+
+***
+
+#### Contour {#contour-tool}
+* **Description:** Creates a line feature class of contours (isolines) from a raster surface.
+
+***
+
+#### Raster to Polygon {#raster-to-polygon}
+* **Description:** Converts a raster dataset to a polygon feature class.
+
+***
+
+#### Raster Calculator {#raster-calculator}
+* **Description:** Builds and executes a single Map Algebra expression using a Python syntax.
+
+***
+
+#### Creating & Editing Features {#creating-editing-features}
+* **Description:** A collection of tools and workflows for creating new vector features and modifying existing ones.
+
+***
+
+#### Minimum Bounding Geometry {#minimum-bounding-geometry}
+* **Description:** Creates a feature class containing polygons or polylines which represent a specified minimum bounding geometry.
+
+***
+
+#### Create Fishnet {#create-fishnet}
+* **Description:** Creates a net of rectangular cells (a fishnet).
+
+***
+
+#### Interpolation Tools {#interpolation-tools}
+* **Description:** A suite of tools (like IDW, Kriging, Spline) used to estimate values at unsampled locations.
+
+***
+
+#### ModelBuilder {#model-builder}
+* **Description:** A visual programming language for building geoprocessing workflows.
+
+***
+
+#### Georeferencing Tools {#georeferencing-tools}
+* **Description:** A set of tools used to align raster or vector data to a known coordinate system. This is often done by creating control points that link locations in the data to known real-world coordinates.
 
 :::
