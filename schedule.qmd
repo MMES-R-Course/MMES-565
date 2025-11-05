@@ -91,8 +91,9 @@ This schedule is tentative and may be adjusted throughout the semester.
 ---
 
 ### **Week 12: November 6**
-* **R/Data Viz:** TBD
-* **GIS:** TBD
+* **R/Data Viz:** ([GitHub Repo](https://github.com/MMES-R-Course/cleaning-data))
+    * **New Functions:** [`clean_names()`](appendix.qmd#clean-names), [`str_to_lower`](appendix.qmd#str-to-lower), [`parse_number()`](appendix.qmd#parse-number)
+* **GIS:** [Creating Maps](https://drive.google.com/drive/folders/1NAG4Cj_RIj5VMjpxI_-cfs421HHhhWE7?usp=drive_link)
 
 ---
 
