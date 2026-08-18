@@ -7,13 +7,15 @@ format:
     toc-location: left
 ---
 
+## Course Schedule
+
 This schedule is tentative and may be adjusted throughout the semester.
 
 ---
 
 ### **Week 1: August 20**
 * **R/Data Viz:** [Course Overview and Intro to R, Git and GitHub](https://drive.google.com/drive/folders/12QQgopbIIbNqcgfgNd3uNY172IEy_8YL?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course))
-* **GIS:** [GIS Overview & Project Setup](https://drive.google.com/drive/folders/1xkkHP6Q8zL9xDxaKtgxIrgxPElL41iZM?usp=drive_link)
+* **GIS:** [GIS Overview](https://drive.google.com/drive/folders/1xkkHP6Q8zL9xDxaKtgxIrgxPElL41iZM?usp=drive_link)
 
 ---
 
@@ -41,17 +43,17 @@ This schedule is tentative and may be adjusted throughout the semester.
 ---
 
 ### **Week 5: September 17**
-* **R/Data Viz:** [Reshaping Data with Tidyverse](https://drive.google.com/drive/folders/1iAcwLf2IZbAN67WOUf_HGMWhePHCdx87?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/reshaping-data-with-tidyverse))
-    * **New Functions:** [`pivot_longer()`](appendix.qmd#pivot-longer), [`pivot_wider()`](appendix.qmd#pivot-wider), [`separate()`](appendix.qmd#separate), [`unite()`](appendix.qmd#unite)
-* **GIS:** [Merge, Append and Intersect](https://drive.google.com/drive/folders/1jNDzmSeX3FmY64EOZ7ga6rznoOdUKIpR?usp=drive_link)
-    * **New Tools:** [`Merge`](appendix.qmd#merge), [`Append`](appendix.qmd#append), [`Intersect`](appendix.qmd#intersect), [`Spatial Join`](appendix.qmd#spatial-join)
+* **R/Data Viz:** [Reproducible Reporting in R](https://drive.google.com/drive/folders/1MErK1Umq3GJEdVDvlg-b2yuqcxAkChzJ?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/reproducible-reporting-in-r))
+    * **New Resources:** [Quarto Cheat Sheet](https://quarto.org/docs/tools/cheat-sheets.html), [R Markdown Cheatsheet](https://posit.co/resources/cheatsheets/)
+* **GIS:** [Creating Maps](https://drive.google.com/drive/folders/1NAG4Cj_RIj5VMjpxI_-cfs421HHhhWE7?usp=drive_link)
 
 ---
 
 ### **Week 6: September 24**
-* **R/Data Viz:** [Cleaning Data](https://drive.google.com/drive/folders/1Mhl9Eyr0Zfnit4OefJqfYVIFoWQ69H1f) ([GitHub Repo](https://github.com/MMES-R-Course/cleaning-data))
-    * **New Functions:** [`clean_names()`](appendix.qmd#clean-names), [`str_to_lower()`](appendix.qmd#str-to-lower), [`parse_number()`](appendix.qmd#parse-number)
-* **GIS:** Topic...
+* **R/Data Viz:** [Reshaping Data with Tidyverse](https://drive.google.com/drive/folders/1iAcwLf2IZbAN67WOUf_HGMWhePHCdx87?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/reshaping-data-with-tidyverse))
+    * **New Functions:** [`pivot_longer()`](appendix.qmd#pivot-longer), [`pivot_wider()`](appendix.qmd#pivot-wider), [`separate()`](appendix.qmd#separate), [`unite()`](appendix.qmd#unite)
+* **GIS:** [Merge, Append and Intersect](https://drive.google.com/drive/folders/1jNDzmSeX3FmY64EOZ7ga6rznoOdUKIpR?usp=drive_link)
+    * **New Tools:** [`Merge`](appendix.qmd#merge), [`Append`](appendix.qmd#append), [`Intersect`](appendix.qmd#intersect), [`Spatial Join`](appendix.qmd#spatial-join)
 
 ---
 
@@ -72,19 +74,6 @@ This schedule is tentative and may be adjusted throughout the semester.
 ---
 
 ### **Week 9: October 15**
-* **R/Data Viz:** [Reproducible Reporting in R](https://drive.google.com/drive/folders/1MErK1Umq3GJEdVDvlg-b2yuqcxAkChzJ?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/reproducible-reporting-in-r))
-    * **New Resources:** [Quarto Cheat Sheet](https://quarto.org/docs/tools/cheat-sheets.html), [R Markdown Cheatsheet](https://posit.co/resources/cheatsheets/)
-* **GIS:** [Creating Maps](https://drive.google.com/drive/folders/1NAG4Cj_RIj5VMjpxI_-cfs421HHhhWE7?usp=drive_link)
-
----
-
-### **Week 10: October 22**
-* **R/Data Viz:** [Reproducible Reporting in R part2](Topic...) ([GitHub Repo](Topic...))
-* **GIS:** [Creating Maps part 2](Topic...)
-
----
-
-### **Week 11: October 29**
 * **R/Data Viz:** [For Loops, Conditionals and Functions](https://drive.google.com/drive/folders/1tzZmqJe_4iXm5DXOuk-2ZubAwBeslPOe?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/for-loops-conditionals-functions))
     * **New Functions:** [`for()` loops](appendix.qmd#for-loop), [Conditionals: `if`, `else if`](appendix.qmd#conditionals), [`function()`](appendix.qmd#custom-function)
 * **GIS:** [Creating Shapefiles and Interpolation](https://drive.google.com/drive/folders/1mxCAKU3r3JypbFA0VxqCvtKSpcgKo8nD?usp=drive_link)
@@ -92,11 +81,25 @@ This schedule is tentative and may be adjusted throughout the semester.
 
 ---
 
-### **Week 12: November 5**
+### **Week 10: October 22**
 * **R/Data Viz:** [Custom Functions](https://drive.google.com/drive/folders/1Ej8Ha__hLZ08FAQ4o-L3iwGKDikmP2xB?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/custom-functions))
     * **New Functions:** [Custom Functions](appendix.qmd#custom-function) (Review)
 * **GIS:** [ModelBuilder](https://drive.google.com/drive/folders/16wIlUMFsRwua7UVN8NMaicH8ObcmnO3N?usp=drive_link)
     * **New Tools:** [ModelBuilder](appendix.qmd#model-builder)
+
+---
+
+### **Week 11: October 29**
+* **R/Data Viz:** [Efficient Programming](https://drive.google.com/drive/folders/1QZcaD96rr7pvsCi0QRJwulWkZCsJ_0Pd?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/efficient-programming))
+    * **New Functions:** [`nest()`](appendix.qmd#nest), [`map()`](appendix.qmd#map), [`tidy()`](appendix.qmd#tidy)
+* **GIS:** [Georeferencing](https://drive.google.com/drive/folders/1P2BTM526t7zgXMsCzmYMmEbJaxClkekx?usp=drive_link)
+    * **New Tools:** [Georeferencing Tools](appendix.qmd#georeferencing-tools)
+
+---
+
+### **Week 12: November 5**
+* **R/Data Viz:** Topic...
+* **GIS:** Topic...
 
 ---
 
@@ -110,10 +113,9 @@ This schedule is tentative and may be adjusted throughout the semester.
 
 ---
 
-### **Week 15: November 26**
-* **No Class:** Thanksgiving Holiday
+### **November 26: No Class (Thanksgiving Holiday)**
 
 ---
 
-### **Week 16: December 3**
+### **Week 15: December 3**
 * **Final Projects Due**

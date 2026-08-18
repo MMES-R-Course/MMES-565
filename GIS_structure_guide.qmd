@@ -1,0 +1,117 @@
+---
+title: "GIS Data Organization"
+subtitle: "A Guide to Structuring ArcGIS Pro Projects"
+format: 
+  html:
+    theme: cosmo
+    toc: true
+---
+
+Before you map your first reef or run a single spatial analysis, you must establish a system for organizing your data. 
+
+In marine ecology, you will deal with massive raster datasets (like sea surface temperature or bathymetry) alongside specific field data (like transect surveys or benthic cover classifications). Without a deliberate storage strategy, your project will quickly become a tangled web of broken links, duplicated multi-gigabyte files, and lost analysis steps right before your thesis defense.
+
+This guide covers how to set up your files, distinguish between project-specific data and master reference data on your computer, and maintain clean spatial hygiene.
+
+## 1. What ArcGIS Pro Sets Up Automatically
+
+When you create a new project using the "Map" template, ArcGIS Pro creates a directory for your project. Think of this folder as the physical container for your workspace. 
+
+Inside that directory, Pro automatically generates a very specific file structure:
+
+```text
+Brewers_Bay_Project/   <-- The main project folder
+│
+├── Brewers_Bay_Project.aprx  # The Project File
+├── Brewers_Bay_Project.gdb   # The Default Geodatabase
+├── Brewers_Bay_Project.atbx  # The Default Toolbox (for your models/scripts)
+├── ImportLog/                # Temporary workspace for imported documents
+├── Index/                    # Search and metadata indexing files
+└── .backups/                 # Automatic project save backups (hidden folder)
+```
+
+### The .aprx file is NOT your data!
+
+The .aprx file acts like a display window. It stores your map layouts, colors, and instructions on where to look for the data. No spatial coordinates, rasters, or data attributes live inside the .aprx file. If you email just the .aprx file to your advisor, they will see a map full of broken red exclamation marks.
+
+
+## 2. Project-Specific Data vs. Personal "Shared" Reference Data
+The biggest mistake is keeping all your data inside a single project folder, or dumping everything onto your Desktop.
+
+To keep your laptop’s hard drive clean and avoid duplicating massive datasets, you need to mentally separate your data into two categories: Project-Specific and Reference.
+
+### A. The Reference Library (Shared Across All Your Projects)
+You should create a single folder (e.g., C:/GIS/ReferenceData/) that acts as a central library for large, immutable datasets you will use repeatedly across different classes, chapters, or side projects. You should never edit or run tools that save outputs into this directory unless its necessary.
+
+**What belongs here?**
+
+- Global or regional bathymetry (e.g., GEBCO, local LiDAR DEMs)
+
+- Climatologies (e.g., NOAA Coral Reef Watch Sea Surface Temperature rasters)
+
+- Global boundary files (e.g., Global Distribution of Coral Reefs UNEP dataset, EEZ boundaries, landmass polygons)
+
+- Unchanging basemaps or large satellite imagery mosaics
+
+``` text
+C:/GIS/ReferenceData/
+│
+├── Bathymetry/
+│   ├── GEBCO_2026_Global_Grid.tif
+│   └── Hawaii_LiDAR_Bathymetry_5m.tif
+├── Oceanography/
+│   └── NOAA_SST_Monthly_Climatology_2010_2020.gdb
+└── Boundaries_and_Baselines/
+    ├── UNEP_WCMC_Global_Coral_Reefs.shp
+    └── US_Exclusive_Economic_Zones.gdb
+```
+
+### B. The Project-Specific Geodatabase (ProjectName.gdb)
+This is the .gdb created inside your specific project folder. It holds data unique to the specific research question or assignment you are working on right now.  This will be automatically created for you when you start a new project in ArcPro. You should create a single folder to house all your projects (e.g., C:/GIS/Projects/Brewers_Bay_Project/)
+
+**What belongs here?**
+
+- Intermediate scratch files: (e.g., a bathymetry layer clipped only to Brewers Bay)
+
+- Primary field data: (e.g., GPS points of coral colonies you sampled, imported from a CSV)
+
+- Geoprocessing outputs: (e.g., Buffer polygons around marine protected areas, hotspot analysis results)
+
+
+## 3. The Recommended Workspace Layout and Putting It All Together
+A well organized project looks like this on your computer. Notice how it references the Reference Library but keeps local operations safely contained:
+
+``` text
+C:/GIS/Projects/Brewers_Bay_Project/
+│
+├── Brewers_Bay_Project.aprx        # The map document
+├── Brewers_Bay_Project.gdb         # ALL output files and clipped data go here
+│   ├── brewers_bathymetry_clip     # (Derived from your Reference folder)
+│   ├── transect_points_2026        # (Imported from 01_RawData)
+│   └── bleaching_hotspot_polygons  # (Final analysis output)
+│
+├── Brewers_Bay_Project.atbx
+│
+├── 01_Raw_Field_Data/                     
+│   ├── benthic_survey_raw_2026.csv
+│   ├── dive_gps_tracks.gpx
+│   └── metadata_field_notes.txt
+│
+├── 02_Reference_Shortcuts/ # Optional: Read-only shortcuts to C:/GIS/ReferenceData/
+│
+└── 03_Final_Exports/ # Where you save outputs for your thesis/publications
+    ├── Fig1_Brewers_Study_Site_300dpi.jpg
+    ├── Fig2_Bleaching_Extent.pdf
+    └── summary_statistics.csv
+```
+
+## 4. Conventions of GIS Data Hygiene
+
+- Keep Raw Data Raw: Never do spatial operations directly on your original field CSVs or master shapefiles. Always import them into your project .gdb first.
+
+- Name Like a Programmer: ArcGIS Pro hates spaces and special characters. Avoid names like Transects (Final) v2 - copy.shp. Use snake_case or CamelCase instead: brewers_transects_final_v2.
+
+- Always Check the Geoprocessing Output Path: Whenever you run a tool (like a Buffer or Clip), Pro will try to guess where to save the output. Always verify it is pointing to your Project .gdb, not your C:/GIS/Reference/ folder, and not the default temporary Scratch.gdb.
+
+- Think Before You Save: "Is this dataset only relevant to this bay on this specific day?" -> Project .gdb. "Will I need this continuous map of ocean depth for my next three projects?" -> Reference Folder.
+

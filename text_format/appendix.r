@@ -204,18 +204,6 @@ This appendix provides a quick reference for functions and tools covered in clas
 * **Description:** A function from the `broom` package that takes the messy output of a model and turns it into a tidy data frame.
 * **Example:** `model %>% tidy()`
 
-#### `clean_names()` {#clean-names}
-* **Description:** A function to standardize and clean column names of data frames.
-* **Example:** `model %>% clean_names()`
-
-#### `str_to_lower()` {#str-to-lower}
-* **Description:** A function to convert a string to all lowercase.
-* **Example:** `str_to_lower("Make_alL_oF_ThIS_lower_CASE")`
-
-#### `parse_number()` {#parse-number}
-* **Description:** A function to extract the first number found within a string, ignoring any non-numeric characters before or after it.
-* **Example:** `parse_number("extract_only_the_25")`
-
 ## ArcPro Tools {#arcpro-tools}
 
 ***

@@ -6,6 +6,3 @@ title: "Supplemental Materials"
 
 [R cheatsheets](https://posit.co/resources/cheatsheets/)
 
-[GIS Project Setup Guide](GIS_structure_guide.qmd)
-
-[R project Setup Guide](r-project-setup-guide.qmd)

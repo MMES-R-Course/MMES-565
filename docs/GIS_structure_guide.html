@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Supplemental Materials – MMES 565</title>
+<title>GIS Data Organization – MMES 565</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./supplemental.html" aria-current="page"> 
+    <a class="nav-link" href="./supplemental.html"> 
 <span class="menu-text">Supplemental Materials</span></a>
   </li>  
 </ul>
@@ -121,7 +121,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-arcgis-pro-sets-up-automatically" id="toc-what-arcgis-pro-sets-up-automatically" class="nav-link active" data-scroll-target="#what-arcgis-pro-sets-up-automatically">1. What ArcGIS Pro Sets Up Automatically</a>
+  <ul class="collapse">
+  <li><a href="#the-.aprx-file-is-not-your-data" id="toc-the-.aprx-file-is-not-your-data" class="nav-link" data-scroll-target="#the-.aprx-file-is-not-your-data">The .aprx file is NOT your data!</a></li>
+  </ul></li>
+  <li><a href="#project-specific-data-vs.-personal-shared-reference-data" id="toc-project-specific-data-vs.-personal-shared-reference-data" class="nav-link" data-scroll-target="#project-specific-data-vs.-personal-shared-reference-data">2. Project-Specific Data vs.&nbsp;Personal “Shared” Reference Data</a>
+  <ul class="collapse">
+  <li><a href="#a.-the-reference-library-shared-across-all-your-projects" id="toc-a.-the-reference-library-shared-across-all-your-projects" class="nav-link" data-scroll-target="#a.-the-reference-library-shared-across-all-your-projects">A. The Reference Library (Shared Across All Your Projects)</a></li>
+  <li><a href="#b.-the-project-specific-geodatabase-projectname.gdb" id="toc-b.-the-project-specific-geodatabase-projectname.gdb" class="nav-link" data-scroll-target="#b.-the-project-specific-geodatabase-projectname.gdb">B. The Project-Specific Geodatabase (ProjectName.gdb)</a></li>
+  </ul></li>
+  <li><a href="#the-recommended-workspace-layout-and-putting-it-all-together" id="toc-the-recommended-workspace-layout-and-putting-it-all-together" class="nav-link" data-scroll-target="#the-recommended-workspace-layout-and-putting-it-all-together">3. The Recommended Workspace Layout and Putting It All Together</a></li>
+  <li><a href="#conventions-of-gis-data-hygiene" id="toc-conventions-of-gis-data-hygiene" class="nav-link" data-scroll-target="#conventions-of-gis-data-hygiene">4. Conventions of GIS Data Hygiene</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -132,7 +148,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Supplemental Materials</h1>
+<h1 class="title">GIS Data Organization</h1>
+<p class="subtitle lead">A Guide to Structuring ArcGIS Pro Projects</p>
 </div>
 
 
@@ -149,12 +166,98 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a></p>
-<p><a href="https://posit.co/resources/cheatsheets/">R cheatsheets</a></p>
-<p><a href="./GIS_structure_guide.html">GIS Project Setup Guide</a></p>
-<p><a href="./r-project-setup-guide.html">R project Setup Guide</a></p>
+<p>Before you map your first reef or run a single spatial analysis, you must establish a system for organizing your data.</p>
+<p>In marine ecology, you will deal with massive raster datasets (like sea surface temperature or bathymetry) alongside specific field data (like transect surveys or benthic cover classifications). Without a deliberate storage strategy, your project will quickly become a tangled web of broken links, duplicated multi-gigabyte files, and lost analysis steps right before your thesis defense.</p>
+<p>This guide covers how to set up your files, distinguish between project-specific data and master reference data on your computer, and maintain clean spatial hygiene.</p>
+<section id="what-arcgis-pro-sets-up-automatically" class="level2">
+<h2 class="anchored" data-anchor-id="what-arcgis-pro-sets-up-automatically">1. What ArcGIS Pro Sets Up Automatically</h2>
+<p>When you create a new project using the “Map” template, ArcGIS Pro creates a directory for your project. Think of this folder as the physical container for your workspace.</p>
+<p>Inside that directory, Pro automatically generates a very specific file structure:</p>
+<pre class="text"><code>Brewers_Bay_Project/   &lt;-- The main project folder
+│
+├── Brewers_Bay_Project.aprx  # The Project File
+├── Brewers_Bay_Project.gdb   # The Default Geodatabase
+├── Brewers_Bay_Project.atbx  # The Default Toolbox (for your models/scripts)
+├── ImportLog/                # Temporary workspace for imported documents
+├── Index/                    # Search and metadata indexing files
+└── .backups/                 # Automatic project save backups (hidden folder)</code></pre>
+<section id="the-.aprx-file-is-not-your-data" class="level3">
+<h3 class="anchored" data-anchor-id="the-.aprx-file-is-not-your-data">The .aprx file is NOT your data!</h3>
+<p>The .aprx file acts like a display window. It stores your map layouts, colors, and instructions on where to look for the data. No spatial coordinates, rasters, or data attributes live inside the .aprx file. If you email just the .aprx file to your advisor, they will see a map full of broken red exclamation marks.</p>
+</section>
+</section>
+<section id="project-specific-data-vs.-personal-shared-reference-data" class="level2">
+<h2 class="anchored" data-anchor-id="project-specific-data-vs.-personal-shared-reference-data">2. Project-Specific Data vs.&nbsp;Personal “Shared” Reference Data</h2>
+<p>The biggest mistake is keeping all your data inside a single project folder, or dumping everything onto your Desktop.</p>
+<p>To keep your laptop’s hard drive clean and avoid duplicating massive datasets, you need to mentally separate your data into two categories: Project-Specific and Reference.</p>
+<section id="a.-the-reference-library-shared-across-all-your-projects" class="level3">
+<h3 class="anchored" data-anchor-id="a.-the-reference-library-shared-across-all-your-projects">A. The Reference Library (Shared Across All Your Projects)</h3>
+<p>You should create a single folder (e.g., C:/GIS/ReferenceData/) that acts as a central library for large, immutable datasets you will use repeatedly across different classes, chapters, or side projects. You should never edit or run tools that save outputs into this directory unless its necessary.</p>
+<p><strong>What belongs here?</strong></p>
+<ul>
+<li><p>Global or regional bathymetry (e.g., GEBCO, local LiDAR DEMs)</p></li>
+<li><p>Climatologies (e.g., NOAA Coral Reef Watch Sea Surface Temperature rasters)</p></li>
+<li><p>Global boundary files (e.g., Global Distribution of Coral Reefs UNEP dataset, EEZ boundaries, landmass polygons)</p></li>
+<li><p>Unchanging basemaps or large satellite imagery mosaics</p></li>
+</ul>
+<pre class="text"><code>C:/GIS/ReferenceData/
+│
+├── Bathymetry/
+│   ├── GEBCO_2026_Global_Grid.tif
+│   └── Hawaii_LiDAR_Bathymetry_5m.tif
+├── Oceanography/
+│   └── NOAA_SST_Monthly_Climatology_2010_2020.gdb
+└── Boundaries_and_Baselines/
+    ├── UNEP_WCMC_Global_Coral_Reefs.shp
+    └── US_Exclusive_Economic_Zones.gdb</code></pre>
+</section>
+<section id="b.-the-project-specific-geodatabase-projectname.gdb" class="level3">
+<h3 class="anchored" data-anchor-id="b.-the-project-specific-geodatabase-projectname.gdb">B. The Project-Specific Geodatabase (ProjectName.gdb)</h3>
+<p>This is the .gdb created inside your specific project folder. It holds data unique to the specific research question or assignment you are working on right now. This will be automatically created for you when you start a new project in ArcPro. You should create a single folder to house all your projects (e.g., C:/GIS/Projects/Brewers_Bay_Project/)</p>
+<p><strong>What belongs here?</strong></p>
+<ul>
+<li><p>Intermediate scratch files: (e.g., a bathymetry layer clipped only to Brewers Bay)</p></li>
+<li><p>Primary field data: (e.g., GPS points of coral colonies you sampled, imported from a CSV)</p></li>
+<li><p>Geoprocessing outputs: (e.g., Buffer polygons around marine protected areas, hotspot analysis results)</p></li>
+</ul>
+</section>
+</section>
+<section id="the-recommended-workspace-layout-and-putting-it-all-together" class="level2">
+<h2 class="anchored" data-anchor-id="the-recommended-workspace-layout-and-putting-it-all-together">3. The Recommended Workspace Layout and Putting It All Together</h2>
+<p>A well organized project looks like this on your computer. Notice how it references the Reference Library but keeps local operations safely contained:</p>
+<pre class="text"><code>C:/GIS/Projects/Brewers_Bay_Project/
+│
+├── Brewers_Bay_Project.aprx        # The map document
+├── Brewers_Bay_Project.gdb         # ALL output files and clipped data go here
+│   ├── brewers_bathymetry_clip     # (Derived from your Reference folder)
+│   ├── transect_points_2026        # (Imported from 01_RawData)
+│   └── bleaching_hotspot_polygons  # (Final analysis output)
+│
+├── Brewers_Bay_Project.atbx
+│
+├── 01_Raw_Field_Data/                     
+│   ├── benthic_survey_raw_2026.csv
+│   ├── dive_gps_tracks.gpx
+│   └── metadata_field_notes.txt
+│
+├── 02_Reference_Shortcuts/ # Optional: Read-only shortcuts to C:/GIS/ReferenceData/
+│
+└── 03_Final_Exports/ # Where you save outputs for your thesis/publications
+    ├── Fig1_Brewers_Study_Site_300dpi.jpg
+    ├── Fig2_Bleaching_Extent.pdf
+    └── summary_statistics.csv</code></pre>
+</section>
+<section id="conventions-of-gis-data-hygiene" class="level2">
+<h2 class="anchored" data-anchor-id="conventions-of-gis-data-hygiene">4. Conventions of GIS Data Hygiene</h2>
+<ul>
+<li><p>Keep Raw Data Raw: Never do spatial operations directly on your original field CSVs or master shapefiles. Always import them into your project .gdb first.</p></li>
+<li><p>Name Like a Programmer: ArcGIS Pro hates spaces and special characters. Avoid names like Transects (Final) v2 - copy.shp. Use snake_case or CamelCase instead: brewers_transects_final_v2.</p></li>
+<li><p>Always Check the Geoprocessing Output Path: Whenever you run a tool (like a Buffer or Clip), Pro will try to guess where to save the output. Always verify it is pointing to your Project .gdb, not your C:/GIS/Reference/ folder, and not the default temporary Scratch.gdb.</p></li>
+<li><p>Think Before You Save: “Is this dataset only relevant to this bay on this specific day?” -&gt; Project .gdb. “Will I need this continuous map of ocean depth for my next three projects?” -&gt; Reference Folder.</p></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

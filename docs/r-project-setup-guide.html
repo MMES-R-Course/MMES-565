@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Supplemental Materials – MMES 565</title>
+<title>GIS Data Organization in R – MMES 565</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./supplemental.html" aria-current="page"> 
+    <a class="nav-link" href="./supplemental.html"> 
 <span class="menu-text">Supplemental Materials</span></a>
   </li>  
 </ul>
@@ -121,7 +121,24 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-rstudio-sets-up-automatically" id="toc-what-rstudio-sets-up-automatically" class="nav-link active" data-scroll-target="#what-rstudio-sets-up-automatically">1. What RStudio Sets Up Automatically</a>
+  <ul class="collapse">
+  <li><a href="#why-standardizing-with-.rproj-matters" id="toc-why-standardizing-with-.rproj-matters" class="nav-link" data-scroll-target="#why-standardizing-with-.rproj-matters">Why standardizing with .Rproj matters</a></li>
+  </ul></li>
+  <li><a href="#the-recommended-workspace-layout" id="toc-the-recommended-workspace-layout" class="nav-link" data-scroll-target="#the-recommended-workspace-layout">2. The Recommended Workspace Layout</a></li>
+  <li><a href="#subdirectory-breakdown-data-conventions" id="toc-subdirectory-breakdown-data-conventions" class="nav-link" data-scroll-target="#subdirectory-breakdown-data-conventions">3. Subdirectory Breakdown &amp; Data Conventions</a>
+  <ul class="collapse">
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">data/</a></li>
+  <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">outputs/</a></li>
+  <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts">scripts/</a></li>
+  <li><a href="#docs" id="toc-docs" class="nav-link" data-scroll-target="#docs">docs/</a></li>
+  </ul></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -132,7 +149,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Supplemental Materials</h1>
+<h1 class="title">GIS Data Organization in R</h1>
+<p class="subtitle lead">A Guide to Structuring RStudio Projects</p>
 </div>
 
 
@@ -149,12 +167,83 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a></p>
-<p><a href="https://posit.co/resources/cheatsheets/">R cheatsheets</a></p>
-<p><a href="./GIS_structure_guide.html">GIS Project Setup Guide</a></p>
-<p><a href="./r-project-setup-guide.html">R project Setup Guide</a></p>
+<p>Before you begin analysis in R, you must establish a system for organizing your files and directories.</p>
+<p>You will often deal with large datasets (from colleagues or off the web) alongside specific field data (like fish transect counts or benthic quadrat surveys). Without a deliberate storage strategy, your workflow will quickly become overwhelming and confusing.</p>
+<p>This guide covers how RStudio Projects work, how conventions will help you maintain project organization.</p>
+<section id="what-rstudio-sets-up-automatically" class="level2">
+<h2 class="anchored" data-anchor-id="what-rstudio-sets-up-automatically">1. What RStudio Sets Up Automatically</h2>
+<p>When you create a new project in RStudio (<strong>File &gt; New Project…</strong>), RStudio creates a self-contained directory anchored by an <code>.Rproj</code> file. Think of this folder as the physical container for your entire workspace.</p>
+<p>Inside that directory, RStudio establishes a clean baseline layout:</p>
+<pre class="text"><code>Brewers_Bay_Ecology/            &lt;-- The main project folder
+│
+├── Brewers_Bay_Ecology.Rproj   # The RStudio Project File
+└── .Rproj.user/                # User-specific RStudio preferences (hidden)</code></pre>
+<section id="why-standardizing-with-.rproj-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-standardizing-with-.rproj-matters">Why standardizing with .Rproj matters</h3>
+<p>Opening an .Rproj file launches a fresh R session and automatically sets your working directory (getwd()) to the project root folder.</p>
+<p>In traditional workflows, researchers often relied on setwd() with absolute paths (e.g., setwd(“C:/Users/name/Desktop/project”)). Using setwd() with absolute paths guarantees that code will break on anyone else’s computer—or even on your own machine if you move the folder.</p>
+<p>RStudio Projects make your workflow portable: as long as all files live inside this directory, the whole folder can be moved, zipped, or shared via GitHub, and all relative file paths will continue to work seamlessly.</p>
+</section>
+</section>
+<section id="the-recommended-workspace-layout" class="level2">
+<h2 class="anchored" data-anchor-id="the-recommended-workspace-layout">2. The Recommended Workspace Layout</h2>
+<p>A well-structured RStudio project is completely self-contained. Every file required to run your analysis, from raw field CSVs to processing scripts and rendered reports lives within sub directories of the root folder:</p>
+<pre class="text"><code>Brewers_Bay_Ecology/
+│
+├── Brewers_Bay_Ecology.Rproj    # RStudio project anchor
+│
+├── data/                        # Primary data directory
+│   ├── raw/                     # Read-only field survey CSVs, raw GPS points
+│   └── processed/               # processed data you generated from the raw.
+│
+├── outputs/                     # Generated deliverables
+│   ├── figures/                 # Publication-ready map figures (.png, .pdf)
+│   └── tables/                  # Exported summary statistics (.csv)
+│
+├── scripts/                     # Standalone .R scripts
+│   ├── 01_data_cleaning.R
+│   ├── 02_my_custom_functions.R
+│   └── 03_spatial_analysis.R
+│
+└── docs/                        # Quarto (.qmd) files and rendered HTML/PDF reports
+    └── index.qmd</code></pre>
+</section>
+<section id="subdirectory-breakdown-data-conventions" class="level2">
+<h2 class="anchored" data-anchor-id="subdirectory-breakdown-data-conventions">3. Subdirectory Breakdown &amp; Data Conventions</h2>
+<section id="data" class="level3">
+<h3 class="anchored" data-anchor-id="data">data/</h3>
+<p>This folder contains all source and derived data required for your analysis.</p>
+<ul>
+<li><p><strong><code>data/raw/</code></strong>: Stores your original datasets. <strong>Convention:</strong> Raw data files must be strictly read-only. Never edit, overwrite, or clean raw data files manually in Excel or R[cite: 2].</p></li>
+<li><p><strong><code>data/processed/</code></strong>: Holds cleaned, transformed, or derived datasets generated programmatically by your R scripts.</p></li>
+</ul>
+</section>
+<section id="outputs" class="level3">
+<h3 class="anchored" data-anchor-id="outputs">outputs/</h3>
+<p>This folder holds all deliverables generated by your R scripts.</p>
+<ul>
+<li><p>Save generated figures (<code>.png</code>, <code>.pdf</code>) and statistical tables here.</p></li>
+<li><p><strong>Convention:</strong> Treat everything in <code>outputs/</code> as disposable and fully reproducible. You should be able to delete the entire <code>outputs/</code> folder, re-run your scripts, and regenerate every file automatically.</p></li>
+</ul>
+</section>
+<section id="scripts" class="level3">
+<h3 class="anchored" data-anchor-id="scripts">scripts/</h3>
+<p>This folder houses modular R code files (<code>.R</code>).</p>
+<ul>
+<li><p>Separate your processing steps into distinct scripts rather than maintaining one massive, thousands-of-lines-long script.</p></li>
+<li><p>Prefix script names with sequential numbers (e.g., <code>01_load_and_clean_data.R</code>, <code>02_site_level_stats.R</code>, <code>03_plot_site_level_data.R</code>) so anyone opening the project knows the exact order in which to run them.</p></li>
+</ul>
+</section>
+<section id="docs" class="level3">
+<h3 class="anchored" data-anchor-id="docs">docs/</h3>
+<p>This folder is dedicated to Quarto documents (<code>.qmd</code>) and rendered output reports (<code>.html</code>, <code>.pdf</code>).</p>
+<ul>
+<li>Isolating Quarto files and their rendered assets in <code>docs/</code> keeps your root folder tidy and makes publishing reports via platforms like GitHub Pages straightforward.</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
