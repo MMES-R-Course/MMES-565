@@ -100,7 +100,18 @@ This schedule is tentative and may be adjusted throughout the semester.
 
 ---
 
+<<<<<<< HEAD
 ### **Week 13: November 12**
+=======
+### **Week 12: November 6**
+* **R/Data Viz:** ([GitHub Repo](https://github.com/MMES-R-Course/cleaning-data))
+    * **New Functions:** [`clean_names()`](appendix.qmd#clean-names), [`str_to_lower`](appendix.qmd#str-to-lower), [`parse_number()`](appendix.qmd#parse-number)
+* **GIS:** [Creating Maps](https://drive.google.com/drive/folders/1NAG4Cj_RIj5VMjpxI_-cfs421HHhhWE7?usp=drive_link)
+
+---
+
+### **Week 13: November 13**
+>>>>>>> b36df8f44d502bd0c242becfc914ec243f2355a6
 * **Open Classroom:** In-class time to work on final projects.
 
 ---
