@@ -20,7 +20,7 @@ This schedule is tentative and may be adjusted throughout the semester.
 ### **Week 2: August 27**
 * **R/Data Viz:** [Data Types and Structures](https://drive.google.com/drive/folders/1tgNqKKxHsKFkgUJz6I8ZCWRoJbFX5OdY?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/data-types-and-structures))
     * **New Functions:** [`class()`](appendix.qmd#class), [`str()`](appendix.qmd#str), [`glimpse()`](appendix.qmd#glimpse), [`read_csv()`](appendix.qmd#read-csv), [`read_xlsx()`](appendix.qmd#read-xlsx), [`write_xlsx()`](appendix.qmd#write-xlsx)
-* **GIS:** [Coordinate Systems and Project Setup](https://drive.google.com/drive/folders/1GzYmQZJvCCuRAmjqH6SLUDo5Oibl7DSE?usp=drive_link)
+* **GIS:** [Coordinate Systems](https://drive.google.com/drive/folders/1GzYmQZJvCCuRAmjqH6SLUDo5Oibl7DSE?usp=drive_link)
 
 ---
 
@@ -101,9 +101,10 @@ This schedule is tentative and may be adjusted throughout the semester.
 ---
 
 ### **Week 13: November 12**
-* **R/Data Viz:** ([GitHub Repo](https://github.com/MMES-R-Course/cleaning-data))
-    * **New Functions:** [`clean_names()`](appendix.qmd#clean-names), [`str_to_lower`](appendix.qmd#str-to-lower), [`parse_number()`](appendix.qmd#parse-number)
-* **GIS:** [Creating Maps](https://drive.google.com/drive/folders/1NAG4Cj_RIj5VMjpxI_-cfs421HHhhWE7?usp=drive_link)
+* **R/Data Viz:** TBD
+    * **New Functions:**
+* **GIS:** TBD
+    * **New Tools:**
 
 ---
 
