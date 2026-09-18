@@ -285,6 +285,21 @@ This appendix provides a quick reference for functions and tools covered in clas
 
 ***
 
+#### Near {#near}
+* **Description:** Calculates distances and other proximity information between features in one or more feature classes or layers.
+
+***
+
+#### Table Join {#table-join}
+* **Description:** Joins attributes from one feature to another based on common table field(s).
+
+***
+
+#### Export Table {#export-table}
+* **Description:** Export feature layer attribute to another common type (.csv, .xlsx).
+
+***
+
 #### Extract by Mask {#extract-by-mask}
 * **Description:** Extracts the cells of a raster that correspond to the areas defined by a mask.
 

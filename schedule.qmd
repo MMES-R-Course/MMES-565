@@ -51,7 +51,8 @@ This schedule is tentative and may be adjusted throughout the semester.
 ### **Week 6: September 24**
 * **R/Data Viz:** [Cleaning Data](https://drive.google.com/drive/folders/1Mhl9Eyr0Zfnit4OefJqfYVIFoWQ69H1f) ([GitHub Repo](https://github.com/MMES-R-Course/cleaning-data))
     * **New Functions:** [`clean_names()`](appendix.qmd#clean-names), [`str_to_lower()`](appendix.qmd#str-to-lower), [`parse_number()`](appendix.qmd#parse-number)
-* **GIS:** Topic...
+* **GIS:** [Near and Table Join](https://docs.google.com/presentation/d/11RLmVxXakRvNtiufSSFDdv4ylQlFpDDmdPhxO1RLpIo/edit?usp=drive_link)
+    * **New Tools:** [`Near`](appendix.qmd#near), [`Table Join`](appendix.qmd#table-join), [`Export Table`](appendix.qmd#export-table)
 
 ---
 
@@ -97,14 +98,6 @@ This schedule is tentative and may be adjusted throughout the semester.
     * **New Functions:** [Custom Functions](appendix.qmd#custom-function) (Review)
 * **GIS:** [ModelBuilder](https://drive.google.com/drive/folders/16wIlUMFsRwua7UVN8NMaicH8ObcmnO3N?usp=drive_link)
     * **New Tools:** [ModelBuilder](appendix.qmd#model-builder)
-
----
-
-### **Week 13: November 12**
-* **R/Data Viz:** TBD
-    * **New Functions:**
-* **GIS:** TBD
-    * **New Tools:**
 
 ---
 
