@@ -73,15 +73,16 @@ This schedule is tentative and may be adjusted throughout the semester.
 ---
 
 ### **Week 9: October 15**
-* **R/Data Viz:** [Reproducible Reporting in R](https://drive.google.com/drive/folders/1MErK1Umq3GJEdVDvlg-b2yuqcxAkChzJ?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/reproducible-reporting-in-r))
+* **R/Data Viz:** [Reproducible Reporting in R Part 1](https://drive.google.com/drive/folders/1MErK1Umq3GJEdVDvlg-b2yuqcxAkChzJ?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/reproducible-reporting-in-r))
     * **New Resources:** [Quarto Cheat Sheet](https://quarto.org/docs/tools/cheat-sheets.html), [R Markdown Cheatsheet](https://posit.co/resources/cheatsheets/)
 * **GIS:** [Creating Maps](https://drive.google.com/drive/folders/1NAG4Cj_RIj5VMjpxI_-cfs421HHhhWE7?usp=drive_link)
 
 ---
 
 ### **Week 10: October 22**
-* **R/Data Viz:** [Reproducible Reporting in R part2](Topic...) ([GitHub Repo](Topic...))
-* **GIS:** [Creating Maps part 2](Topic...)
+* **R/Data Viz:** [Reproducible Reporting in R Part 2](https://drive.google.com/drive/folders/1MErK1Umq3GJEdVDvlg-b2yuqcxAkChzJ?usp=drive_link) ([GitHub Repo](https://github.com/MMES-R-Course/reproducible-reporting-in-r))
+    * **New Resources:** [Quarto Cheat Sheet](https://quarto.org/docs/tools/cheat-sheets.html), [R Markdown Cheatsheet](https://posit.co/resources/cheatsheets/)
+* **GIS:** [Creating Maps](https://drive.google.com/drive/folders/1NAG4Cj_RIj5VMjpxI_-cfs421HHhhWE7?usp=drive_link)
 
 ---
 
